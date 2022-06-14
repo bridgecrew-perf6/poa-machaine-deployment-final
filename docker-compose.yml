@@ -56,7 +56,122 @@ services:
       poa-network-gabriel:
         ipv4_address: 172.16.0.9
 
+  validator-1-container:
+    build:
+      context: .
+      dockerfile: validator-X-ressource/Dockerfile
 
+    container_name: validator-1-container
+    volumes:
+      # - ./validator-1/:/home/openethereum/test-network/chain-data/ #to init y
+      - ./validator-1/keys:/home/openethereum/test-network/chain-data/keys
+      - ./validator-1/cache:/home/openethereum/test-network/chain-data/cache
+      - ./validator-1/chains:/home/openethereum/test-network/chain-data/chains
+      - ./validator-1/network:/home/openethereum/test-network/chain-data/network
+      - ./validator-1/signer:/home/openethereum/test-network/chain-data/signer
+
+    ports:
+      - 30301:30300 # sync
+      - 8545:8545 # rpc 
+      - 8547:8546 # websockets
+
+    restart: unless-stopped
+
+
+    environment:
+      - MINING_VALIDATOR_KEY_ADDRESS=0xf49c6b509de3946d74cd42d8d8b6fb5044315972
+      - MINING_VALIDATOR_KEY_PASSWORD=Kvft7XEQw819n8PoWgjT
+
+    networks:
+      poa-network-gabriel:
+        ipv4_address: 172.16.0.11
+
+  validator-2-container:
+    build:
+      context: .
+      dockerfile: validator-X-ressource/Dockerfile
+
+    container_name: validator-2-container
+    volumes:
+      # - ./validator-2/:/home/openethereum/test-network/chain-data/ #to init 
+      - ./validator-2/keys:/home/openethereum/test-network/chain-data/keys
+      - ./validator-2/cache:/home/openethereum/test-network/chain-data/cache
+      - ./validator-2/chains:/home/openethereum/test-network/chain-data/chains
+      - ./validator-2/network:/home/openethereum/test-network/chain-data/network
+      - ./validator-2/signer:/home/openethereum/test-network/chain-data/signer
+
+    ports:
+      - 30302:30300 # sync
+      - 8548:8545 # rpc 
+      - 8549:8546 # websockets
+
+    restart: unless-stopped
+
+    environment:
+      - MINING_VALIDATOR_KEY_ADDRESS=0x0065f43ff2a75fb2a608d0ab08f363907193a1e8
+      - MINING_VALIDATOR_KEY_PASSWORD=sfQTVe710A351bzuvscF
+
+    networks:
+      poa-network-gabriel:
+        ipv4_address: 172.16.0.12
+
+  validator-3-container:
+    build:
+      context: .
+      dockerfile: validator-X-ressource/Dockerfile
+
+    container_name: validator-3-container
+    volumes:
+      # - ./validator-3/:/home/openethereum/test-network/chain-data/ #to init 
+      - ./validator-3/keys:/home/openethereum/test-network/chain-data/keys
+      - ./validator-3/cache:/home/openethereum/test-network/chain-data/cache
+      - ./validator-3/chains:/home/openethereum/test-network/chain-data/chains
+      - ./validator-3/network:/home/openethereum/test-network/chain-data/network
+      - ./validator-3/signer:/home/openethereum/test-network/chain-data/signer
+
+    ports:
+      - 30303:30300 # sync
+      - 8550:8545 # rpc 
+      - 8551:8546 # websockets
+
+    restart: unless-stopped
+
+    environment:
+      - MINING_VALIDATOR_KEY_ADDRESS=0xdbc029db29d594f066f9c9bf561e0bf3a6fd8cf4
+      - MINING_VALIDATOR_KEY_PASSWORD=FG0KdxLAlJSSpu1cvETM
+
+    networks:
+      poa-network-gabriel:
+        ipv4_address: 172.16.0.13
+
+  validator-4-container:
+    build:
+      context: .
+      dockerfile: validator-X-ressource/Dockerfile
+
+    container_name: validator-4-container
+    volumes:
+      # - ./validator-4/:/home/openethereum/test-network/chain-data/ #to init 
+      - ./validator-4/keys:/home/openethereum/test-network/chain-data/keys
+      - ./validator-4/cache:/home/openethereum/test-network/chain-data/cache
+      - ./validator-4/chains:/home/openethereum/test-network/chain-data/chains
+      - ./validator-4/network:/home/openethereum/test-network/chain-data/network
+      - ./validator-4/signer:/home/openethereum/test-network/chain-data/signer
+
+    ports:
+      - 30304:30300 # sync
+      - 8552:8545 # rpc 
+      - 8553:8546 # websockets
+
+    restart: unless-stopped
+
+    environment:
+      - MINING_VALIDATOR_KEY_ADDRESS=0xae3ae6a3e5fa8b1bd979952b4661a7f24a4339a8
+      - MINING_VALIDATOR_KEY_PASSWORD=Sv2JL67dQS2ajPT03IZ5
+
+    networks:
+      poa-network-gabriel:
+        ipv4_address: 172.16.0.14
 
 networks:
 
@@ -66,123 +181,9 @@ networks:
 
 
 
-  # validator-1-container:
-  #   build:
-  #     context: .
-  #     dockerfile: validator-X-ressource/Dockerfile
-
-  #   container_name: validator-1-container
-  #   volumes:
-  #     # - ./validator-1/:/home/openethereum/test-network/chain-data/ #to init y
-  #     - ./validator-1/keys:/home/openethereum/test-network/chain-data/keys
-  #     - ./validator-1/cache:/home/openethereum/test-network/chain-data/cache
-  #     - ./validator-1/chains:/home/openethereum/test-network/chain-data/chains
-  #     - ./validator-1/network:/home/openethereum/test-network/chain-data/network
-  #     - ./validator-1/signer:/home/openethereum/test-network/chain-data/signer
-
-  #   ports:
-  #     - 30301:30300 # sync
-  #     - 8545:8545 # rpc 
-  #     - 8547:8546 # websockets
-
-  #   restart: unless-stopped
 
 
-  #   environment:
-  #     - MINING_VALIDATOR_KEY_ADDRESS=0x3bf8d530a14bcbae29962bc4f1e967f94cb24ed5
-  #     - MINING_VALIDATOR_KEY_PASSWORD=JugHsojrcBK_A3_m8G7p
 
-  #   networks:
-  #     poa-network-gabriel:
-  #       ipv4_address: 172.16.0.11
-
-  # validator-2-container:
-  #   build:
-  #     context: .
-  #     dockerfile: validator-X-ressource/Dockerfile
-
-  #   container_name: validator-2-container
-  #   volumes:
-  #     # - ./validator-2/:/home/openethereum/test-network/chain-data/ #to init 
-  #     - ./validator-2/keys:/home/openethereum/test-network/chain-data/keys
-  #     - ./validator-2/cache:/home/openethereum/test-network/chain-data/cache
-  #     - ./validator-2/chains:/home/openethereum/test-network/chain-data/chains
-  #     - ./validator-2/network:/home/openethereum/test-network/chain-data/network
-  #     - ./validator-2/signer:/home/openethereum/test-network/chain-data/signer
-
-  #   ports:
-  #     - 30302:30300 # sync
-  #     - 8548:8545 # rpc 
-  #     - 8549:8546 # websockets
-
-  #   restart: unless-stopped
-
-  #   environment:
-  #     - MINING_VALIDATOR_KEY_ADDRESS=0x3fa00557e47e7d1763fbc62ba694910a4190bbcf
-  #     - MINING_VALIDATOR_KEY_PASSWORD=U2olR2FbUpRNv_fD_CqI
-
-  #   networks:
-  #     poa-network-gabriel:
-  #       ipv4_address: 172.16.0.12
-
-  # validator-3-container:
-  #   build:
-  #     context: .
-  #     dockerfile: validator-X-ressource/Dockerfile
-
-  #   container_name: validator-3-container
-  #   volumes:
-  #     # - ./validator-3/:/home/openethereum/test-network/chain-data/ #to init 
-  #     - ./validator-3/keys:/home/openethereum/test-network/chain-data/keys
-  #     - ./validator-3/cache:/home/openethereum/test-network/chain-data/cache
-  #     - ./validator-3/chains:/home/openethereum/test-network/chain-data/chains
-  #     - ./validator-3/network:/home/openethereum/test-network/chain-data/network
-  #     - ./validator-3/signer:/home/openethereum/test-network/chain-data/signer
-
-  #   ports:
-  #     - 30303:30300 # sync
-  #     - 8550:8545 # rpc 
-  #     - 8551:8546 # websockets
-
-  #   restart: unless-stopped
-
-  #   environment:
-  #     - MINING_VALIDATOR_KEY_ADDRESS=0x92f7b1c038dec9c9f0b56de33f3e1e793dbc1272
-  #     - MINING_VALIDATOR_KEY_PASSWORD=C0ToeDmkVmTpiTn_dJSM
-
-  #   networks:
-  #     poa-network-gabriel:
-  #       ipv4_address: 172.16.0.13
-
-
-  # validator-4-container:
-  #   build:
-  #     context: .
-  #     dockerfile: validator-X-ressource/Dockerfile
-
-  #   container_name: validator-4-container
-  #   volumes:
-  #     # - ./validator-4/:/home/openethereum/test-network/chain-data/ #to init 
-  #     - ./validator-4/keys:/home/openethereum/test-network/chain-data/keys
-  #     - ./validator-4/cache:/home/openethereum/test-network/chain-data/cache
-  #     - ./validator-4/chains:/home/openethereum/test-network/chain-data/chains
-  #     - ./validator-4/network:/home/openethereum/test-network/chain-data/network
-  #     - ./validator-4/signer:/home/openethereum/test-network/chain-data/signer
-
-  #   ports:
-  #     - 30304:30300 # sync
-  #     - 8552:8545 # rpc 
-  #     - 8553:8546 # websockets
-
-  #   restart: unless-stopped
-
-  #   environment:
-  #     - MINING_VALIDATOR_KEY_ADDRESS=0x8f8c13aae433ba75d9dc9466c7a89bcf77764cd9
-  #     - MINING_VALIDATOR_KEY_PASSWORD=YZeYvvgwoEGANIxG2_ld
-
-  #   networks:
-  #     poa-network-gabriel:
-  #       ipv4_address: 172.16.0.14
 
 
 
