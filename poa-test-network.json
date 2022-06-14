@@ -13,6 +13,9 @@
                             "list": [
                                 "0x6002eC6dd413817B523F865D15E3F2E5598280af"
                             ]
+                        },
+                        "115": {
+                            "safeContract": "0x87f6ca3e22ad8967a5a3369063da59ab7aec6e2f"
                         }
                     }
                 }
