@@ -1,0 +1,10 @@
+{
+    "homeBridge": {
+        "address": "",
+        "deployedBlockNumber": 0
+    },
+    "foreignBridge": {
+        "address": "",
+        "deployedBlockNumber": 0
+    }
+}
