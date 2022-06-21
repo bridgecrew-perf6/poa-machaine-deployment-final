@@ -1,10 +1,26 @@
 {
     "homeBridge": {
-        "address": "0x1D6d73db979ECF65F6F26CE3f291258457cD3886",
-        "deployedBlockNumber": 259
+        "address": "0xB628114388dcb3d1949d5e238469a38A9E0A73Fe",
+        "deployedBlockNumber": 8472
     },
     "foreignBridge": {
-        "address": "0x353eF3545a4e3632F74eA1102182b8251dfde4B3",
-        "deployedBlockNumber": 7058107
+        "address": "0xb5Efc3ec1E73ffF1Fc154668DE4B8643Fd3f2312",
+        "deployedBlockNumber": 7068442
+    },
+    "homeBridge_test": {
+        "address": "0x3A4501E1a255EEC3D202083BFDdE86e590663150",
+        "deployedBlockNumber": 11903
+    },
+    "foreignBridge_test": {
+        "address": "0x83B5FAa4F7859Fb3d4C4a80d9c54E167E1F5F109",
+        "deployedBlockNumber": 7069701
+    },
+    "homeBridge_test2": {
+        "address": "0x6d7ABcf76475e2d1ded1573E7864c47081e42FfC",
+        "deployedBlockNumber": 16945
+    },
+    "foreignBridge_test2": {
+        "address": "0xa5045719D200f236D77526afE53973E61E2830FE",
+        "deployedBlockNumber": 7091622
     }
 }

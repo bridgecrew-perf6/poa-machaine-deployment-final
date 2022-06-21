@@ -18,7 +18,9 @@
                             "safeContract": "0x2f1b5e6c9d4013664a7f119a40b093395a26b7a0"
                         }
                     }
-                }
+                },
+                "blockRewardContractAddress": "0x3a1e782e194323dd751b54c367f508a5ea9b21a5",
+                "blockRewardContractTransition": 14950
             }
         }
     },
